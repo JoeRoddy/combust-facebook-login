@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "users": "latest",
+    "social-login": "latest"
+  },
+  "componentsPath": "src/components/users/auth/social",
+  "installedIfExists": [
+    "src/components/users/auth/social/FacebookLoginBtn.jsx",
+    "src/components/users/auth/social/FacebookLoginBtn.js"
+  ],
+  "installation": {
+    "src/components/users/auth/Login.jsx": {
+      "imports": [
+        "import FacebookLoginBtn from \"./social/FacebookLoginBtn\";"
+      ],
+      "after": {
+        "pattern": "</Form>",
+        "code": ["\n\t\t\t<FacebookLoginBtn onLogin={this.onLogin} />"]
+      }
+    }
+  }
+}
